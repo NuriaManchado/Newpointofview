@@ -1,0 +1,111 @@
+/*===== Background Color =====*/ 
+.blue-bg,
+.blue-bg-hover:hover,
+.strt-btns > a.blue-bg,
+.strt-btns > a:hover,
+.vdo-sec-innr > span a:hover,
+.membr-wrp:hover .membr-inf,
+.membr-wrp:before,
+.owl-dots > div.active,
+/*.cnt-frm button:hover,*/
+.thm-lyr:before,
+.cnt-frm button,
+.vw-al > a,
+.vw-al > a:hover i,
+.fea-btns > a i,
+.fea-btns > a.no-bg:hover i,
+.widget ul li:hover > span,
+.tagcloud > a:before,
+.share > a:before,
+.comment-reply-link,
+.rspnsv-lg-br > span:hover,
+.btn1:hover,
+.btn1:focus,
+.mbr-cnt > li i,
+nav ul > li:hover > a,
+nav ul > li > a:focus,
+nav ul > li > a.active
+{
+	background-color: #C23347;
+}
+
+/*===== Text Color =====*/
+.blue-clr,
+.owl-nav > div:hover,
+.acordn-itm > h4.active,
+.acordn-itm > h4.active i,
+.nwsltr-frm > button:hover,
+.vw-al > a:hover,
+.nws-inf > h4:hover > a,
+.mta > span a:hover,
+.app-scrn-caro .owl-nav > div:hover,
+.hdr-scl > a:hover,
+.hdr-scl > a:focus,
+.rspnsv-mnu > span:hover,
+.pst-meta > li.cmt,
+.tagclouds > a,
+.pst-author-detail > h2 a,
+.author-social > li a,
+.title > span,
+.title > h4 span,
+.comment-detail > h2 a:hover,
+.comment-detail > span,
+.blg-dtl h3 span,
+.pst-meta > li i,
+.pst-meta > li a:hover,
+.pst-meta > li a:focus,
+span.date > i,
+.rcnt-pst-inf > h2 a:hover,
+.rcnt-pst-inf > h2 a:focus,
+.widget ul li:hover > a,
+.widget ul li > a:focus,
+.video-thumb > a,
+.video-info > h2 a:hover,
+.video-info > h2 a:focus,
+.mbr-cnt > li a:hover,
+.mbr-cnt > li a:focus,
+.mbr-inf > i,
+.er-pg-inr > strong,
+.er-pg-inr > span span,
+.pg-srch-frm > button:hover,
+.pg-srch-frm > button:focus,
+.srch-fund-inr > strong span,
+.page-title > h1
+{
+	color: #C23347;
+}
+
+/*===== Border Color =====*/ 
+.sec-tl-innr .tl-shp::before,
+.sec-tl-innr .tl-shp::after,
+.sec-tl-innr .tl-shp-inr::before,
+.vw-al > a:hover,
+.widget ul li:hover > span
+{
+	border-color: #C23347;
+}
+
+/*===== Border Top Color =====*/ 
+
+{
+	border-top-color: #C23347;
+}
+
+/*===== Border Right Color =====*/ 
+
+{
+	border-right-color: #C23347;
+}
+
+/*===== Border Bottom Color =====*/
+.acordn-itm.activate
+{
+	border-bottom-color: #C23347;
+}
+
+/*===== Border Left Color =====*/ 
+.sec-tl-innr .tl-shp,
+.sec-tl-innr .tl-shp-inr
+{
+	border-left-color: #C23347;
+}

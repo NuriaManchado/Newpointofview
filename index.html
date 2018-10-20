@@ -1,316 +1,592 @@
 <!DOCTYPE html>
-	<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-	<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-	<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-	<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html>
+<head>
+    <!-- Meta-Information -->
+    <title>3DVRsity | SpaceAppsMadrid</title>
+    <meta charset="utf-8">
+    <meta name="description" content="3DVRsity | SpaceAppsMadrid">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>3DVRsity | SpaceApps</title>
-		<meta name="description" content="Slider Revolution Example" />
-		<meta name="keywords" content="fullscreen image, grid layout, flexbox grid, transition" />
-		<meta name="author" content="ThemePunch" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Vendor: Bootstrap 4 Stylesheets  -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 
-		<!-- LOAD JQUERY LIBRARY -->
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+    <!-- Our Website CSS Styles -->
+    <link rel="stylesheet" href="css/icons.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/color.css">
+    <link rel="stylesheet" href="css/responsive.css">
 
-                <!-- LOADING FONTS AND ICONS -->
-        <link href="http://fonts.googleapis.com/css?family=Poppins:700" rel="stylesheet" property="stylesheet" type="text/css" media="all">
+    <!-- Revolution Style -->
+    <link rel="stylesheet" href="css/revolution/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="css/revolution/settings.css">
+    <link rel="stylesheet" href="css/revolution/layers.css">
+    <link rel="stylesheet" href="css/revolution/navigation.css">
 
-
-		<link rel="stylesheet" type="text/css" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
-		<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
-
-		<!-- REVOLUTION STYLE SHEETS -->
-		<link rel="stylesheet" type="text/css" href="css/settings.css">
-		<!-- REVOLUTION LAYERS STYLES -->
-<style></style>
-<style type="text/css">.tp-imgopacity img{opacity:0.5}.revtp-searchform input#s{font-family:"Arial",sans-serif; font-size:20px !important; font-weight:700; color:#fff !important; background-color:transparent; line-height:56px !important; padding:0 20px !important; cursor:text; border:2px solid #fff; width:380px; margin-bottom:0px; -webkit-transition:background-color 0.5s; -moz-transition:background-color 0.5s; -o-transition:background-color 0.5s; -ms-transition:background-color 0.5s; transition:background-color 0.5s; -webkit-border-radius:0px; -moz-border-radius:0px; border-radius:0px}.revtp-searchform input#s::placeholder{color:#fff !important}.revtp-searchform input#s::-webkit-input-placeholder{color:#fff !important}.revtp-searchform input#s::-moz-input-placeholder{color:#fff !important}.revtp-searchform input#s[type="text"]:focus{background-color:rgba(255,255,255,0.15)}.revtp-searchform input#searchsubmit,.revtp-searchform input#searchsubmit:focus{font-family:"Arial",sans-serif; line-height:60px;  letter-spacing:1px;  text-transform:uppercase;  font-size:15px;  font-weight:700;  padding:0 20px;border:0;  background:#fff;  color:#000;-webkit-border-radius:0px;-moz-border-radius:0px;border-radius:0px}.revtp-searchform input#searchsubmit:hover{color:#fff;  background:#ff00ff}@media only screen and (max-width:767px){.revtp-searchform input#s{width:280px}}@media only screen and (max-width:479px){.revtp-searchform input#s{width:200px}}</style>
-
-        <!-- ADD-ONS CSS FILES -->
-                    <link  rel="stylesheet" type="text/css"  media="all" href="css/revolution.addon.particles.css" />
-        
-        <!-- ADD-ONS JS FILES -->
-                    <script type="text/javascript" src="js/revolution.addon.particles.min.js"></script>
-        
-        <!-- REVOLUTION JS FILES -->
-		<script type="text/javascript" src="js/jquery.themepunch.tools.min.js"></script>
-		<script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
-
-        
-        <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
-		<script type="text/javascript" src="js/extensions/revolution.extension.actions.min.js"></script>
-		<script type="text/javascript" src="js/extensions/revolution.extension.carousel.min.js"></script>
-		<script type="text/javascript" src="js/extensions/revolution.extension.kenburn.min.js"></script>
-		<script type="text/javascript" src="js/extensions/revolution.extension.layeranimation.min.js"></script>
-		<script type="text/javascript" src="js/extensions/revolution.extension.migration.min.js"></script>
-		<script type="text/javascript" src="js/extensions/revolution.extension.navigation.min.js"></script>
-		<script type="text/javascript" src="js/extensions/revolution.extension.parallax.min.js"></script>
-		<script type="text/javascript" src="js/extensions/revolution.extension.slideanims.min.js"></script>
-		<script type="text/javascript" src="js/extensions/revolution.extension.video.min.js"></script>
+    <!-- Revolution Addons -->
+    <link rel="stylesheet" href="css/revolution/addons/revolution.addon.particles.css">
 
 
-        <script type="text/javascript">function setREVStartSize(e){                                    
-			try{ e.c=jQuery(e.c);var i=jQuery(window).width(),t=9999,r=0,n=0,l=0,f=0,s=0,h=0;
-				if(e.responsiveLevels&&(jQuery.each(e.responsiveLevels,function(e,f){f>i&&(t=r=f,l=e),i>f&&f>r&&(r=f,n=e)}),t>r&&(l=n)),f=e.gridheight[l]||e.gridheight[0]||e.gridheight,s=e.gridwidth[l]||e.gridwidth[0]||e.gridwidth,h=i/s,h=h>1?1:h,f=Math.round(h*f),"fullscreen"==e.sliderLayout){var u=(e.c.width(),jQuery(window).height());if(void 0!=e.fullScreenOffsetContainer){var c=e.fullScreenOffsetContainer.split(",");if (c) jQuery.each(c,function(e,i){u=jQuery(i).length>0?u-jQuery(i).outerHeight(!0):u}),e.fullScreenOffset.split("%").length>1&&void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0?u-=jQuery(window).height()*parseInt(e.fullScreenOffset,0)/100:void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0&&(u-=parseInt(e.fullScreenOffset,0))}f=u}else void 0!=e.minHeight&&f<e.minHeight&&(f=e.minHeight);e.c.closest(".rev_slider_wrapper").css({height:f})                    
-			}catch(d){console.log("Failure at Presize of Slider:"+d)}                        
-		};</script>
-	</head>
+</head>
+<body>
+    <!-- Our Website Content Goes Here -->
+    <main>
+        <header class="stck">
+            <div class="container">
+                <div class="mnu-sc">
+                    <div class="logo">
+                        <h1><a href="particle-effect-three.html" title=""><img src="images/logo.png" alt="" itemprop="image"></a></h1>
+                    </div>
+                    <nav class="one-page-func">
+                        
+                        <ul>
+                            <li><a href="#home" title="">Explore</a></li>
+                            <li><a href="#learn" title="">Learn</a></li>
+                            <li><a href="#do-it" title="">Do it yourself</a></li>
+                            <li><a href="#features" title="">Future Features</a></li>
+                            <li><a href="#team" title="">Team</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header><!-- Header -->
+        <div class="rpnsv-hdr">
+            <div class="rspnsv-lg-br">
+                <div class="logo">
+                    <h1><a href="index6.html" title=""><img src="images/logo.png" alt=""></a></h1>
+                </div>
+                <span class="mnu-btn brd-rd5"><i class="fa fa-align-justify"></i></span>
+            </div>
+            <div class="rspnsv-mnu blue-bg">
+                <span class="cls-btn"><i class="fa fa-close"></i></span>
+                <ul>
+                    <li><a href="#home" title="">Explore</a></li>
+                            <li><a href="#learn" title="">Learn</a></li>
+                            <li><a href="#do-it" title="">Do it yourself</a></li>
+                            <li><a href="#features" title="">Future Features</a></li>
+                            <li><a href="#team" title="">Team</a></li>
+                </ul>
+            </div>
+        </div><!-- Responsive Header -->
+        <section id="home">
+            <div class="gp nogp">
+                <div class="creative-slider">
+                    <div id="rev_slider_8_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="particle-effect-three6" data-source="gallery" style="background:#ffffff;padding:0px;">
+                        <!-- Start Revolution Slider 5.4.1 -->
+                        <div id="rev_slider_8_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.1">
+                            <ul><!-- SLIDE  -->
+                                <li data-index="rs-16" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="Power4.easeOut" data-easeout="Power4.easeOut" data-masterspeed="default"  data-thumb="http://works.themepunch.com/revolution_5_3/wp-content/"  data-rotate="0"  data-saveperformance="off"  data-title="Example One" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                                    <!-- MAIN IMAGE -->
+                                    <img src="images/transparent.png" data-bgcolor='#ffffff'' style='background:#ffffff' alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                                    <!-- LAYERS -->
 
-	<body style="margin: 0; padding: 0">
-			
+                                    <!-- LAYER NR. 1 -->
+                                    <div class="tp-caption" 
+                                        id="slide-16-layer-15" 
+                                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                        data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
+                                        data-width="full-proportional"
+                                        data-height="full-proportional"
+                                        data-whitespace="nowrap"         
+                                        data-type="image" 
+                                        data-basealign="slide" 
+                                        data-responsive_offset="off" 
+                                        data-responsive="off"
+                                        data-frames='[{"delay":500,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                        data-textAlign="['inherit','inherit','inherit','inherit']"
+                                        data-paddingtop="[0,0,0,0]"
+                                        data-paddingright="[0,0,0,0]"
+                                        data-paddingbottom="[0,0,0,0]"
+                                        data-paddingleft="[0,0,0,0]"
+                                        data-blendmode="overlay"
+                                        style="z-index: 5;"><img src="images/blurbg7.jpg" alt="" data-ww="['full-proportional','full-proportional','full-proportional','full-proportional']" data-hh="['full-proportional','full-proportional','full-proportional','full-proportional']" width="1920" height="1080" data-no-retina> 
+                                    </div>
 
-<div id="rev_slider_22_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="404-error-page" data-source="gallery" style="background:transparent;padding:0px;">
-<!-- START REVOLUTION SLIDER 5.4.8.1 fullscreen mode -->
-	<div id="rev_slider_22_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.8.1">
-<ul>	<!-- SLIDE  -->
-    <li data-index="rs-30" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-		<!-- MAIN IMAGE -->
-        <img src="assets/galaxy.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
-		<!-- LAYERS -->
+                                    <!-- LAYER NR. 2 -->
+                                    <div class="tp-caption tp-resizeme blurslider-gradient" 
+                                        id="slide-16-layer-6" 
+                                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                        data-y="['middle','middle','middle','middle']" data-voffset="['-110','-110','-130','-130']" 
+                                        data-fontsize="['60','60','40','40']"
+                                        data-lineheight="['80','80','60','60']"
+                                        data-width="none"
+                                        data-height="none"
+                                        data-whitespace="nowrap"         
+                                        data-type="text" 
+                                        data-responsive_offset="on" 
+                                        data-wrapper_class="tp-nopointer" 
+                                        data-frames='[{"delay":500,"speed":1000,"frame":"0","from":"sX:2;sY:3;opacity:0;fb:10px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;fb:0;","ease":"Power3.easeInOut"}]'
+                                        data-textAlign="['center','center','center','center']"
+                                        data-paddingtop="[0,0,0,0]"
+                                        data-paddingright="[0,0,0,0]"
+                                        data-paddingbottom="[0,0,0,0]"
+                                        data-paddingleft="[0,0,0,0]"
+                                        style="z-index: 6; white-space: nowrap; font-size: 60px; line-height: 80px; font-weight: 400; color: rgba(4,37,60,1);font-family:Poppins;letter-spacing:10px;">NEW<br/>POINT OF VIEW  
+                                    </div>
 
-		<!-- LAYER NR. 1 -->
-		<div class="tp-caption   tp-resizeme  tp-imgopacity rs-parallaxlevel-1" 
-			 id="slide-30-layer-3" 
-			 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-			 data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
-						data-width="full-proportional"
-			data-height="full-proportional"
-			data-whitespace="nowrap"
- 
-            data-type="image" 
-			data-basealign="slide" 
-			data-responsive_offset="on" 
+                                    <!-- LAYER NR. 3 -->
+                                    <div class="tp-caption tp-resizeme" 
+                                        id="slide-16-layer-8" 
+                                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                        data-y="['middle','middle','middle','middle']" data-voffset="['30','30','0','0']" 
+                                        data-width="['460','461','360','330']"
+                                        data-height="none"
+                                        data-whitespace="normal"         
+                                        data-type="text" 
+                                        data-responsive_offset="on" 
+                                        data-wrapper_class="tp-nopointer" 
+                                        data-frames='[{"delay":700,"speed":1000,"frame":"0","from":"y:20px;sX:2;sY:3;opacity:0;fb:10px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":600,"frame":"999","to":"auto:auto;fb:0;","ease":"Power3.easeInOut"}]'
+                                        data-textAlign="['center','center','center','center']"
+                                        data-paddingtop="[0,0,0,0]"
+                                        data-paddingright="[0,0,0,0]"
+                                        data-paddingbottom="[0,0,0,0]"
+                                        data-paddingleft="[0,0,0,0]"
+                                        style="z-index: 7; min-width: 460px; max-width: 460px; white-space: normal; font-size: 15px; line-height: 25px; font-weight: 400; color: rgba(4,37,60,1);font-family:Poppins;letter-spacing:10px;">SPACE APPS MADRID
+                                    </div>
 
-            data-frames='[{"delay":200,"speed":2000,"frame":"0","from":"sX:1;sY:1;opacity:0;fb:10px;","to":"o:1;fb:0px;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
-            data-textAlign="['inherit','inherit','inherit','inherit']"
-            data-paddingtop="[0,0,0,0]"
-            data-paddingright="[0,0,0,0]"
-            data-paddingbottom="[0,0,0,0]"
-            data-paddingleft="[0,0,0,0]"
+                                    <!-- LAYER NR. 4 -->
+                                    <a class="tp-caption rev-btn  tp-resizeme  blurslider-button" href="#learn" 
+                                        id="slide-16-layer-17" 
+                                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                        data-y="['middle','middle','middle','middle']" data-voffset="['140','140','110','110']" 
+                                        data-width="none"
+                                        data-height="none"
+                                        data-whitespace="nowrap"         
+                                        data-type="button" 
+                                        data-actions=''
+                                        data-responsive_offset="on" 
+                                        data-frames='[{"delay":900,"speed":1000,"frame":"0","from":"y:100px;sX:2;sY:3;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":600,"frame":"999","to":"auto:auto;fb:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"200","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;fb:0;","style":"c:rgba(255,255,255,1);"}]'
+                                        data-textAlign="['inherit','inherit','inherit','inherit']"
+                                        data-paddingtop="[0,0,0,0]"
+                                        data-paddingright="[35,35,35,35]"
+                                        data-paddingbottom="[0,0,0,0]"
+                                        data-paddingleft="[35,35,35,35]"
+                                        data-blendmode="multiply"
+                                        style="z-index: 8; white-space: nowrap; font-size: 15px; line-height: 50px; font-weight: 400; color: rgba(255,255,255,1);font-family:Poppins;background-color:rgba(4,37,60,1);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;letter-spacing:3px;cursor:pointer;text-decoration: none;">LET'S START!  
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div> 
+                        </div>
+                    </div><!-- End Revolution Slider -->
+                </div><!-- Creative Slider  -->
+            </div>
+        </section>
 
-            style="z-index: 5;opacity:0.5 !important;">
-<div class="rs-looped rs-slideloop"  data-easing="Power1.easeInOut" data-speed="1" data-xs="-5" data-xe="5" data-ys="0" data-ye="0"><img src="assets/galaxy.jpg" alt="" data-ww="['full-proportional','full-proportional','full-proportional','full-proportional']" data-hh="['full-proportional','full-proportional','full-proportional','full-proportional']" data-no-retina> </div></div>
+        <section id="learn">
+            <div class="gp gry-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <div class="tlt-txt text-center">
+                                <div class="tlt-txt-innr">
+                                    <h2>Let's turn the universe into <br> a <i class="blue-clr"> virtual real view</i></h2>
+                                    <p>CHOOSE, EXPLORE AND ENJOY!</p>
+                                </div>
+                            </div>
+                            <div class="rmv-ext">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6 col-lg-4">
+                                        <div class="fea-bx brd-rd5 text-center">
+                                            <i><img src="images/resource/moon.png" alt="" /></i>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-lg-4">
+                                        <div class="fea-bx brd-rd5 text-center">
+                                            <i><img src="images/resource/mars.png" alt="" /></i>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-lg-4">
+                                        <div class="fea-bx brd-rd5 text-center">
+                                            <i><img src="images/resource/mercury.png" alt="" /></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-lg-4">
+                                        <div class="fea-bx brd-rd5 text-center">
+                                            <i><img src="images/resource/venus.png" alt="" /></i>
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-lg-4">
+                                        <div class="fea-bx brd-rd5 text-center">
+                                            <i><img src="images/resource/jupiter.png" alt="" /></i>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-lg-4">
+                                        <div class="fea-bx brd-rd5 text-center">
+                                            <i><img src="images/resource/saturn.png" alt="" /></i>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vw-al text-center"><a class="brd-rd40 clk-scrl" href="#contact" title="">MORE<i class="fa fa-angle-right brd-rd50"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skw-shp-bp rgt"></div>
+            </div>
+        </section>
 
-		<!-- LAYER NR. 2 -->
-		<div class="tp-caption   tp-resizeme  tp-imgopacity rs-parallaxlevel-2" 
-			 id="slide-30-layer-5" 
-			 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-			 data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
-						data-width="full-proportional"
-			data-height="full-proportional"
-			data-whitespace="nowrap"
- 
-            data-type="image" 
-			data-basealign="slide" 
-			data-responsive_offset="on" 
+        <section>
+            <div class="gp">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <div class="chs-wrp">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                        <div class="tlt-txt">
+                                            <div class="tlt-txt-innr">
+                                                <h2>Learn with your</h2>
+                                                <h2> <i class="blue-clr"> SPACE TEACHER <br> MR. PADRID </br></i></h2>
+                                                
+                                            </div>
+                                        </div>
+                                        <div id="acordn" class="faq-wrp">
+                                            <div class="acordn-itm">
+                                                <h4>ABOUT PLANETS <i class="fa fa-arrow-right"></i></h4>
+                                                
+                                            </div>
+                                            <div class="acordn-itm">
+                                                <h4>ABOUT NASA <i class="fa fa-arrow-right"></i></h4>
+                                                
+                                            </div>
+                                            <div class="acordn-itm">
+                                                <h4>ABOUT LANDINGS <i class="fa fa-arrow-right"></i></h4>
+                                                
+                                            </div>
+                                            <div class="acordn-itm">
+                                                <h4>TESTS <i class="fa fa-arrow-right"></i></h4>
+                                                
+                                            </div>
+                                        </div><!-- Accordions  -->                                    
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                        <div class="chr-mckp">
+                                            <img src="images/resource/spaceteacher.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            data-frames='[{"delay":300,"speed":2000,"frame":"0","from":"sX:1;sY:1;opacity:0;fb:10px;","to":"o:1;fb:0px;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
-            data-textAlign="['inherit','inherit','inherit','inherit']"
-            data-paddingtop="[0,0,0,0]"
-            data-paddingright="[0,0,0,0]"
-            data-paddingbottom="[0,0,0,0]"
-            data-paddingleft="[0,0,0,0]"
+        <section id="do-it">
+            <div class="gp">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <div class="sec-tl-wrp text-center">
+                                <div class="sec-tl-innr">
+                                    <h2>Do it yourself!</h2>
+                                    <span>Yes! You can do it!</span>
+                                    <i class="tl-shp"><i class="tl-shp-inr"></i></i>
+                                </div>
+                            </div>
+                            <div class="rmv-ext">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6 col-lg-4">
+                                        <div class="rcnt-nws text-center">
+                                            <div class="rcnt-thmb">
+                                                <a href="blog-detail.html" title=""><img src="images/resource/rcnt-nws-img1.jpg" alt=""></a>
+                                            </div>
+                                            <div class="nws-inf">
+                                                
+                                                <h4><a href="blog-detail.html" title="">Create your own VR glasses</a></h4>
+                                                <span class="pst-athr blue-clr brd-rd30">Download and print</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-lg-4">
+                                        <div class="rcnt-nws text-center">
+                                            <div class="rcnt-thmb">
+                                                <a href="blog-detail.html" title=""><img src="images/resource/rcnt-nws-img2.jpg" alt=""></a>
+                                            </div>
+                                            <div class="nws-inf">
+                                                
+                                                <h4><a href="blog-detail.html" title="">Space Games</a></h4>
+                                                <span class="pst-athr blue-clr brd-rd30">Posted by Willimes Smith</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-lg-4">
+                                        <div class="rcnt-nws text-center">
+                                            <div class="rcnt-thmb">
+                                                <a href="blog-detail.html" title=""><img src="images/resource/rcnt-nws-img3.jpg" alt=""></a>
+                                            </div>
+                                            <div class="nws-inf">
+                                                
+                                                <h4><a href="blog-detail.html" title="">Be a Pilot!</a></h4>
+                                                <span class="pst-athr blue-clr brd-rd30">Posted by Willimes Smith</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                </div>
+                </div>
+            </div>
+        </section>
 
-            style="z-index: 6;opacity:0.5 !important;">
-<div class="rs-looped rs-slideloop"  data-easing="Power1.easeInOut" data-speed="1" data-xs="0" data-xe="0" data-ys="-5" data-ye="5"><img src="assets/galaxy.jpg" alt="" data-ww="['full-proportional','full-proportional','full-proportional','full-proportional']" data-hh="['full-proportional','full-proportional','full-proportional','full-proportional']" data-no-retina> </div></div>
 
-		<!-- LAYER NR. 3 -->
-		<div class="tp-caption   tp-resizeme  tp-imgopacity rs-parallaxlevel-3" 
-			 id="slide-30-layer-7" 
-			 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-			 data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
-						data-width="full-proportional"
-			data-height="full-proportional"
-			data-whitespace="nowrap"
- 
-            data-type="image" 
-			data-basealign="slide" 
-			data-responsive_offset="on" 
+        <section id="features">
+            <div class="gp gry-lyr hg-opc">
+                <div class="skw-shp-tp lft"></div>
+                <div class="parlx" style="background-image: url(images/parlx-bg1.jpg);"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <div class="amz-fea">
+                                <div class="row">
+                                    <div class="col-md-5 col-sm-6 hidden-sm-down col-lg-5">
+                                        <div class="amz-mckp"><img src="images/resource/future.png" alt="" /></div>
+                                    </div>
+                                    <div class="col-md-7 col-sm-12 col-lg-7">
+                                        <div class="amz-tl">
+                                            <h2>Future<i class="blue-clr"> Features</i></h2>
+                                            <p>Lorem ipsum dolor sit amet, consectetur ili adipiscing Donec nec eros eget elit Donec nec eros eget adipiscing Ulimes gue ut eget…</p>
+                                        </div>
+                                        <div class="fea-wrp">
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-6 col-lg-6">
+                                                    <div class="fea-bx2">
+                                                        <i class="ion-android-expand"></i>
+                                                        <div class="fea-innr">
+                                                            <h5>SUPER ZOOM</h5>
+                                                            <p>Lorem ipsum dolor sit amet, consectet adop adipisicing elit, sed do eiusmod temporara incidid labore.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-lg-6">
+                                                    <div class="fea-bx2">
+                                                        <i class="ion-android-walk"></i>
+                                                        <div class="fea-innr">
+                                                            <h5>WALK IN VR</h5>
+                                                            <p>Lorem ipsum dolor sit amet, consectet adop adipisicing elit, sed do eiusmod temporara incidid labore.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-lg-6">
+                                                    <div class="fea-bx2">
+                                                        <i class="ion-ios-navigate"></i>
+                                                        <div class="fea-innr">
+                                                            <h5>CREATE YOUR OWN TRIP</h5>
+                                                            <p>Lorem ipsum dolor sit amet, consectet adop adipisicing elit, sed do eiusmod temporara incidid labore.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-lg-6">
+                                                    <div class="fea-bx2">
+                                                        <i class="ion-ios-list-outline blue-clr"></i>
+                                                        <div class="fea-innr">
+                                                            <h5>FOLLOW CURIOSITY</h5>
+                                                            <p>Lorem ipsum dolor sit amet, consectet adop adipisicing elit, sed do eiusmod temporara incidid labore.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            data-frames='[{"delay":400,"speed":2000,"frame":"0","from":"sX:1;sY:1;opacity:0;fb:10px;","to":"o:1;fb:0px;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
-            data-textAlign="['inherit','inherit','inherit','inherit']"
-            data-paddingtop="[0,0,0,0]"
-            data-paddingright="[0,0,0,0]"
-            data-paddingbottom="[0,0,0,0]"
-            data-paddingleft="[0,0,0,0]"
 
-            style="z-index: 7;opacity:0.5 !important;">
-<div class="rs-looped rs-wave"  data-speed="10" data-angle="0" data-radius="15px" data-origin="50% 50%"><img src="assets/galaxy.jpg" alt="" data-ww="['full-proportional','full-proportional','full-proportional','full-proportional']" data-hh="['full-proportional','full-proportional','full-proportional','full-proportional']" data-no-retina> </div></div>
+        <section id="team">
+            <div class="gp bp175">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <div class="sec-tl-wrp text-center">
+                                <div class="sec-tl-innr">
+                                    <h2>Meet Awesome Team</h2>
+                                    <span>HOW WE MET EACH OTHER?</span>
+                                    <span>We meet at #SpaceAppsMadrid, coming from different parts of the word, sharing one common vission: Getting the people the possibility to really be inmerse in the universe and interact with it!</span>
+                                    <i class="tl-shp"><i class="tl-shp-inr"></i></i>
+                                </div>
+                            </div>
+                            <div class="rmv-ext">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6 col-lg-4">
+                                        <div class="membr-wrp text-center">
+                                            <div class="membr-innr">
+                                                <img src="images/resource/abel.png" alt="" />
+                                                <div class="membr-inf">
+                                                    <h4><a href="team-detail.html" title="">23, ABEL LEDEZMA</a></h4>
+                                                    <span class="blue-clr">Web Designer</span>
+                                                    <div class="scl-inf">
+                                                        <a href="#" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                        <a href="#" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                        <a href="#" title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a>
+                                                        <a href="#" title="Vimeo" target="_blank"><i class="fa fa-vimeo"></i></a>
+                                                    </div>
+                                                    <p>From Asunción, Paraguay</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-lg-4">
+                                        <div class="membr-wrp text-center">
+                                            <div class="membr-innr">
+                                                <img src="images/resource/giselle.png" alt="" />
+                                                <div class="membr-inf">
+                                                    <h4><a href="team-detail.html" title="">23, GISELLE RAMÍREZ</a></h4>
+                                                    <span class="blue-clr">UI/UX Designer</span>
+                                                    <div class="scl-inf">
+                                                        <a href="#" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                        <a href="#" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                        <a href="#" title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a>
+                                                        <a href="#" title="Vimeo" target="_blank"><i class="fa fa-vimeo"></i></a>
+                                                    </div>
+                                                    <p>From Asunción, Paraguay</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-lg-4">
+                                        <div class="membr-wrp text-center">
+                                            <div class="membr-innr">
+                                                <img src="images/resource/david.png" alt="" />
+                                                <div class="membr-inf">
+                                                    <h4><a href="team-detail.html" title="">43, DAVID CRESPO</a></h4>
+                                                    <span class="blue-clr">VR Developer</span>
+                                                    <div class="scl-inf">
+                                                        <a href="#" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                        <a href="#" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                        <a href="#" title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a>
+                                                        <a href="#" title="Vimeo" target="_blank"><i class="fa fa-vimeo"></i></a>
+                                                    </div>
+                                                    <p>Lorem ipsum dolor uIL sit am pellen erat Maecenas cenasgue ut eget secte pellentesque…</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-lg-4">
+                                        <div class="membr-wrp text-center">
+                                            <div class="membr-innr">
+                                                <img src="images/resource/nuri.png" alt="" />
+                                                <div class="membr-inf">
+                                                    <h4><a href="team-detail.html" title="">23, NURIA MACHADO</a></h4>
+                                                    <span class="blue-clr">Software Engineer</span>
+                                                    <div class="scl-inf">
+                                                        <a href="#" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                        <a href="#" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                        <a href="#" title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a>
+                                                        <a href="#" title="Vimeo" target="_blank"><i class="fa fa-vimeo"></i></a>
+                                                    </div>
+                                                    <p>Lorem ipsum dolor uIL sit am pellen erat Maecenas cenasgue ut eget secte pellentesque…</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-lg-4">
+                                        <div class="membr-wrp text-center">
+                                            <div class="membr-innr">
+                                                <img src="images/resource/padrid.png" alt="" />
+                                                <div class="membr-inf">
+                                                    <h4><a href="team-detail.html" title="">0, MR. PADRID</a></h4>
+                                                    <span class="blue-clr">Space Teacher</span>
+                                                    <div class="scl-inf">
+                                                        <a href="#" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                        <a href="#" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                        <a href="#" title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a>
+                                                        <a href="#" title="Vimeo" target="_blank"><i class="fa fa-vimeo"></i></a>
+                                                    </div>
+                                                    <p>Lorem ipsum dolor uIL sit am pellen erat Maecenas cenasgue ut eget secte pellentesque…</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-lg-4">
+                                        <div class="membr-wrp text-center">
+                                            <div class="membr-innr">
+                                                <img src="images/resource/estrella.png" alt="" />
+                                                <div class="membr-inf">
+                                                    <h4><a href="team-detail.html" title="">25, ESTRELLA PEREZ</a></h4>
+                                                    <span class="blue-clr">Mechanical Engineer</span>
+                                                    <div class="scl-inf">
+                                                        <a href="#" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                        <a href="#" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                        <a href="#" title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a>
+                                                        <a href="#" title="Vimeo" target="_blank"><i class="fa fa-vimeo"></i></a>
+                                                    </div>
+                                                    <p>Lorem ipsum dolor uIL sit am pellen erat Maecenas cenasgue ut eget secte pellentesque…</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vw-al text-center"><a class="brd-rd40" href="team.html" title="">VIEW ALL TEAM <i class="fa fa-angle-right brd-rd50"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-		<!-- LAYER NR. 4 -->
-		<div class="tp-caption   rs-parallaxlevel-1" 
-			 id="slide-30-layer-14" 
-			 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-			 data-y="['middle','middle','middle','middle']" data-voffset="['-67','-67','-47','-67']" 
-						data-fontsize="['250','250','200','150']"
-			data-lineheight="['250','250','200','150']"
-			data-width="none"
-			data-height="none"
-			data-whitespace="nowrap"
- 
-            data-type="text" 
-			data-responsive_offset="off" 
-			data-responsive="off"
-            data-frames='[{"delay":800,"speed":2000,"frame":"0","from":"sX:2;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
-            data-textAlign="['center','center','center','center']"
-            data-paddingtop="[0,0,0,0]"
-            data-paddingright="[0,0,0,0]"
-            data-paddingbottom="[0,0,0,0]"
-            data-paddingleft="[0,0,0,0]"
+        <footer>
+            <div class="gp tp315">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <div class="ftr-wrp text-center">
+                                <div class="ftr-innr">
+                                    <h1>SPACE<span>APPS</span></h1>
+                                    <p>People who succeed have momentum. The more they succeed, the more they want to succeed, Lorimes somijes ilimes uilme silmes and the more they find a way to succeed.</p>
+                                    <span><i class="blue-clr">Copyright &copy; 2018 3DVRsity</i> | All Rights Reserved</span>
+                                    <div class="ft-scl">
+                                        <a class="vimeo scl-btn brd-rd50" href="#" title="" target="_blank"><i class="fa fa-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
 
-            style="z-index: 8; white-space: nowrap; font-size: 250px; line-height: 250px; font-weight: 700; color: rgba(255,0,255,1); letter-spacing: ;font-family:Poppins;letter-spacing:-10px;">
-<div class="rs-looped rs-wave"  data-speed="3" data-angle="0" data-radius="2px" data-origin="50% 50%">3DVRsity </div></div>
+    <!-- Vendor: Javascripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
-		<!-- LAYER NR. 5 -->
-		<div class="tp-caption   rs-parallaxlevel-1" 
-			 id="slide-30-layer-13" 
-			 data-x="['center','center','center','center']" data-hoffset="['-3','-3','-3','-3']" 
-			 data-y="['middle','middle','middle','middle']" data-voffset="['-70','-70','-50','-70']" 
-						data-fontsize="['250','250','200','150']"
-			data-lineheight="['250','250','200','150']"
-			data-width="none"
-			data-height="none"
-			data-whitespace="nowrap"
- 
-            data-type="text" 
-			data-responsive_offset="off" 
-			data-responsive="off"
-            data-frames='[{"delay":700,"speed":2000,"frame":"0","from":"sX:2;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
-            data-textAlign="['center','center','center','center']"
-            data-paddingtop="[0,0,0,0]"
-            data-paddingright="[0,0,0,0]"
-            data-paddingbottom="[0,0,0,0]"
-            data-paddingleft="[0,0,0,0]"
+    <!-- Our Website Javascripts -->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.counterup.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/scroll-up-bar.min.js"></script>
+    <script src="js/jquery.poptrox.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4XGd9qpQIEkbfL6QpR6qk2jQ9S9_5Uww"></script>
+    <script src="js/main.js"></script>
 
-            style="z-index: 9; white-space: nowrap; font-size: 250px; line-height: 250px; font-weight: 700; color: rgba(255,255,0,1); letter-spacing: ;font-family:Poppins;letter-spacing:-10px;">
-<div class="rs-looped rs-wave"  data-speed="3" data-angle="0" data-radius="2px" data-origin="50% 50%">3DVRsity </div></div>
+    <!-- Revolution JS Files -->
+    <script src="js/revolution/jquery.themepunch.tools.min.js"></script>
+    <script src="js/revolution/jquery.themepunch.revolution.min.js"></script>
 
-		<!-- LAYER NR. 6 -->
-		<div class="tp-caption   rs-parallaxlevel-1" 
-			 id="slide-30-layer-12" 
-			 data-x="['center','center','center','center']" data-hoffset="['3','3','3','3']" 
-			 data-y="['middle','middle','middle','middle']" data-voffset="['-70','-70','-50','-70']" 
-						data-fontsize="['250','250','200','150']"
-			data-lineheight="['250','250','200','150']"
-			data-width="none"
-			data-height="none"
-			data-whitespace="nowrap"
- 
-            data-type="text" 
-			data-responsive_offset="off" 
-			data-responsive="off"
-            data-frames='[{"delay":600,"speed":2000,"frame":"0","from":"sX:2;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
-            data-textAlign="['center','center','center','center']"
-            data-paddingtop="[0,0,0,0]"
-            data-paddingright="[0,0,0,0]"
-            data-paddingbottom="[0,0,0,0]"
-            data-paddingleft="[0,0,0,0]"
+    <!-- Revolution Addons -->
+    <script src="js/revolution/addons/revolution.addon.particles.min.js"></script>
 
-            style="z-index: 10; white-space: nowrap; font-size: 250px; line-height: 250px; font-weight: 700; color: rgba(0,255,255,1); letter-spacing: ;font-family:Poppins;letter-spacing:-10px;">
-<div class="rs-looped rs-wave"  data-speed="3" data-angle="0" data-radius="2px" data-origin="50% 50%">3DVRsity </div></div>
-
-		<!-- LAYER NR. 7 -->
-		<div class="tp-caption   rs-parallaxlevel-1" 
-			 id="slide-30-layer-11" 
-			 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-			 data-y="['middle','middle','middle','middle']" data-voffset="['-70','-70','-50','-70']" 
-						data-fontsize="['250','250','200','150']"
-			data-lineheight="['250','250','200','150']"
-			data-width="none"
-			data-height="none"
-			data-whitespace="nowrap"
- 
-            data-type="text" 
-			data-responsive_offset="off" 
-			data-responsive="off"
-            data-frames='[{"delay":500,"speed":2000,"frame":"0","from":"sX:2;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
-            data-textAlign="['center','center','center','center']"
-            data-paddingtop="[0,0,0,0]"
-            data-paddingright="[0,0,0,0]"
-            data-paddingbottom="[0,0,0,0]"
-            data-paddingleft="[0,0,0,0]"
-
-            style="z-index: 11; white-space: nowrap; font-size: 250px; line-height: 250px; font-weight: 700; color: rgba(255,255,255,1); letter-spacing: ;font-family:Poppins;letter-spacing:-10px;">3DVRsity </div>
-	</li>
-</ul>
-<div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>	</div>
-</div><!-- END REVOLUTION SLIDER -->
-		<script type="text/javascript">
-			            var revapi22,
-			tpj;
-(function() {
-    if (!/loaded|interactive|complete/.test(document.readyState)) document.addEventListener("DOMContentLoaded",onLoad); else onLoad();
-
-    function onLoad() {
-        if (tpj===undefined) { tpj = jQuery; if("off" == "on") tpj.noConflict();}
-				if(tpj("#rev_slider_22_1").revolution == undefined){
-					revslider_showDoubleJqueryError("#rev_slider_22_1");
-				}else{
-					revapi22 = tpj("#rev_slider_22_1").show().revolution({
-						sliderType:"hero",
-jsFileLocation:"//localhost:8888/revs/revslider/public/assets/js/",
-						sliderLayout:"fullscreen",
-						dottedOverlay:"none",
-						delay:9000,
-						particles: {startSlide: "first", endSlide: "last", zIndex: "8",
-							particles: {
-								number: {value: 200}, color: {value: "#ffffff"},
-								shape: {
-									type: "circle", stroke: {width: 0, color: "#ffffff", opacity: 1},
-									image: {src: ""}
-								},
-								opacity: {value: 1, random: true, min: 0.5, anim: {enable: true, speed: 1, opacity_min: 0, sync: false}},
-								size: {value: 2, random: true, min: 0.5, anim: {enable: true, speed: 10, size_min: 1, sync: false}},
-								line_linked: {enable: false, distance: 150, color: "#ffffff", opacity: 0.4, width: 1},
-								move: {enable: true, speed: 1, direction: "none", random: false, min_speed: 1, straight: true, out_mode: "out"}},
-							interactivity: {
-								events: {onhover: {enable: true, mode: "bubble"}, onclick: {enable: false, mode: "repulse"}},
-								modes: {grab: {distance: 400, line_linked: {opacity: 0.5}}, bubble: {distance: 400, size: 0, opacity: 1}, repulse: {distance: 200}}
-							}
-						},
-						navigation: {
-						},
-						responsiveLevels:[1240,1024,778,480],
-						visibilityLevels:[1240,1024,778,480],
-						gridwidth:[1240,1024,778,480],
-						gridheight:[868,768,960,720],
-						lazyType:"none",
-						parallax: {
-							type:"mouse",
-							origo:"slidercenter",
-							speed:2000,
-                          speedbg:0,
-                          speedls:0,
-							levels:[2,4,6,4,5,30,35,40,45,46,47,48,49,50,51,55],
-						},
-						shadow:0,
-						spinner:"off",
-						autoHeight:"off",
-						fullScreenAutoWidth:"off",
-						fullScreenAlignForce:"off",
-						fullScreenOffsetContainer: "",
-						fullScreenOffset: "60px",
-						disableProgressBar:"on",
-						hideThumbsOnMobile:"off",
-						hideSliderAtLimit:0,
-						hideCaptionAtLimit:0,
-						hideAllCaptionAtLilmit:0,
-						debugMode:false,
-						fallbacks: {
-							simplifyAll:"off",
-							disableFocusListener:false,
-						}
-					});
-    }; /* END OF revapi call */
-    
-                RsParticlesAddOn(revapi22);
- }; /* END OF ON LOAD FUNCTION */
-}()); /* END OF WRAPPING FUNCTION */
-		</script>
-		
-
-	    </body>
+    <!-- Slider Revolution 5.0 Extensions -->   
+    <script src="js/revolution/extensions/revolution.extension.actions.min.js"></script>
+    <script src="js/revolution/extensions/revolution.extension.carousel.min.js"></script>
+    <script src="js/revolution/extensions/revolution.extension.kenburn.min.js"></script>
+    <script src="js/revolution/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="js/revolution/extensions/revolution.extension.migration.min.js"></script>
+    <script src="js/revolution/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="js/revolution/extensions/revolution.extension.parallax.min.js"></script>
+    <script src="js/revolution/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="js/revolution/extensions/revolution.extension.video.min.js"></script>
+    <script src="js/revolution/revolution.initialize6.js"></script>
+</body>
 </html>
