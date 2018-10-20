@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello, WebVR! • A-Frame</title>
+    <meta name="description" content="Hello, WebVR! • A-Frame">
+    <!--
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    -->
+    <script src="aframe-v0.8.2.min.js"></script>
+</head>
+  <body>
+    <a-scene background="color: #ECECEC">
+      <a-obj-model src="marstrek01/model.obj" mtl="marstrek01/terrain.mtl" texture="marstrek01/texture.png" scale="1 1 1" position="0 -10 -25"></a-obj-model>
+    </a-scene>
+  </body>
+</html>
