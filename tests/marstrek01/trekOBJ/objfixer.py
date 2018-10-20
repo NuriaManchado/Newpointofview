@@ -1,6 +1,6 @@
 import sys
 
-#print sys.argv[1]
+print sys.argv[1]
 
 fn_input = 'input_model.obj'
 fn_output = 'output_model.obj'
@@ -34,7 +34,7 @@ for idx in xrange(len(lines)):
 outtext = ''
 
 for idx in xrange(last_f_line_with_slash):
-    outtext += lines[idx] + '\n'
+    outtext += lines[idx] + ' '
 
 f = open(fn_output, 'w')
 f.write(outtext)
