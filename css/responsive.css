@@ -142,7 +142,7 @@ main {padding-top: 0 !important;}
 .strt-txt {margin-bottom: 40px;}
 .ovrlp-175.rmv-ext {padding-top: 40px;margin-top: 0;}
 .rmv-ext .row {white-space: nowrap;overflow-x: auto;display: block;overflow-y: hidden;}
-.rmv-ext .row > div {white-space: normal;display: inline-block;float: none;}
+.rmv-ext .row > div {white-space: normal;display: inline-block;float: none; width: 85%;}
 .vdo-sec-innr > span {margin-top: 20px;}
 .sec-tl-innr > i.tl-tp {height: 50px;margin-bottom: 20px;}
 .sec-tl-innr > i.tl-tp:after {bottom: -2px;height: 25px;width: 25px;left: -12.5px;}
