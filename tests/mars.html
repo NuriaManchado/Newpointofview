@@ -2,17 +2,83 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hello, WebVR! • A-Frame</title>
-    <meta name="description" content="Hello, WebVR! • A-Frame">
-    <!--
+    <title>Mars | 3DVRsity</title>
+    <meta name="description" content="Mars | 3DVRsity">
     <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
-    -->
-    <script src="aframe-v0.8.2.min.js"></script>
-</head>
+    <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
+    <script src="js/register.js"></script>
+    <script src="models/mars/main.js"></script>
+  </head>
   <body>
-    <a-scene background="color: #ECECEC">
-      <a-sky src="skymaps/milkyway_2048.jpg" rotation="90 45 0"></a-sky>
-     <a-obj-model src="models/mars/sphere.obj" mtl="models/mars/terrain.mtl" scale="1 1 1" position="0 1.5 -2" rotation = "-90 0 0"></a-obj-model>
+    <a-scene>
+
+      <!-- ASSETS  -->
+        <a-assets>
+          <img id="marte1-thumb" crossorigin="anonymous" src="skymaps/marte1.png">
+          <img id="marte2-thumb" crossorigin="anonymous" src="skymaps/marte2.png">
+          <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+        </a-assets>
+      <!-- FIN ASSETS  -->
+
+
+      <!-- SKY -->
+        <a-sky src="skymaps/milkyway_2048.jpg" rotation="90 45 0"></a-sky>
+      <!-- FIN SKY -->
+
+      
+      <!-- BOTONES -->
+        <a-entity layout="type: line; margin: 25" position="-7.5 -6 -15">
+          <a-image class="link" src="#marte1-thumb" height="8" width="8"
+              event-set__1="_event: mousedown; scale: 1 1 1"
+              event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+              event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+              event-set__4="_event: mouseleave; scale: 1 1 1"
+              set-image="on: click; target: #image-360; src: /mars02-GaleCrater.html"
+              sound="on: click; src: #click-sound" ></a-image>
+          </a-entity>
+        <a-entity layout="type: line; margin: 25" position="7.5 -6 -15">
+          <a-image class="link" src="#marte2-thumb" height="8" width="8"
+              event-set__1="_event: mousedown; scale: 1 1 1"
+              event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+              event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+              event-set__4="_event: mouseleave; scale: 1 1 1"
+              set-image="on: click; target: #image-360; src: /mars04-OlympusMons.html"
+              sound="on: click; src: #click-sound"></a-image>
+        </a-entity>
+      <!-- FIN BOTONES -->
+
+      <!-- LOGO -->
+
+        <a-entity layout="type: line; margin: 1.5" position="-0 2.2 -4">
+          <a-image src="skymaps/logo.png" width="2px" height="1px"></a-image>
+        </a-entity>
+
+      <!-- FIN LOGO -->
+
+      <!-- Camera + cursor. -->
+        <a-entity camera look-controls>
+          <a-cursor id="cursor"
+            animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 300"
+            animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+            event-set__1="_event: mouseenter; color: springgreen"
+            event-set__2="_event: mouseleave; color: black"
+            fuse="true"
+            raycaster="objects: .link"></a-cursor>
+        </a-entity>
+      <!-- FIN Camera + cursor. -->
+
+      <!-- OBJETO -->
+        <a-obj-model src="models/mars/sphere.obj" mtl="models/mars/terrain.mtl" scale="10 10 10" position="0 -0.01 -30" rotation = "-90 0 0"></a-obj-model>
+      <!-- FIN OBJETO -->
     </a-scene>
   </body>
 </html>
+
+
+
+
+
+
