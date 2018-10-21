@@ -8,12 +8,76 @@
     <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
     -->
     <script src="aframe-v0.8.2.min.js"></script>
+    <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
+    <!-- <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script> -->
+    <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
+    <script src="js/register.js"></script>
 </head>
   <body>
     <a-scene background="color: #111111">
-      <a-sky src="../skymaps/milkyway_2048.jpg" rotation="90 0 0"></a-sky>
+      <!-- ASSETS  -->
+        <a-assets>
+          <img id="back-thumb" crossorigin="anonymous" src="skymaps/back.png">
+          <img id="on-thumb" crossorigin="anonymous" src="skymaps/on.png">
+          <img id="card-thumb" crossorigin="anonymous" src="skymaps/moon05.png">
+          <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+        </a-assets>
+      <!-- FIN ASSETS  -->
+
+      <a-sky src="skymaps/milkyway_2048.jpg" rotation="90 0 0"></a-sky>
+
+
+        <!-- Back Button -->
+        <a-entity layout="type: line; margin: 25" position="-7.5 9 -15">
+          <a-image class="link" src="#back-thumb" height="2" width="2"
+              event-set__1="_event: mousedown; scale: 1 1 1"
+              event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+              event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+              event-set__4="_event: mouseleave; scale: 1 1 1"
+              back="on: click; target: #image-360; src: moon.html"
+              ></a-image>
+        </a-entity>
+        <!-- Sound Button -->
+        <a-entity layout="type: line; margin: 25" position="7.5 9 -15">
+          <a-image class="link" src="#on-thumb" height="2" width="2"
+              event-set__1="_event: mousedown; scale: 1 1 1"
+              event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+              event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+              event-set__4="_event: mouseleave; scale: 1 1 1"
+              audio="on: click; target: #image-360; src: #card-thumb; audio: audios/moon05.ogg"
+              ></a-image>
+        </a-entity>
+
+
+      <!-- Camera + cursor. -->
+        <a-entity camera look-controls>
+          <a-cursor id="cursor"
+            animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 300"
+            animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+            event-set__1="_event: mouseenter; color: springgreen"
+            event-set__2="_event: mouseleave; color: black"
+            fuse="true"
+            raycaster="objects: .link"></a-cursor>
+        </a-entity>
+      <!-- FIN Camera + cursor. -->
+
+
+
+        <!-- Card Image -->
+        <a-entity layout="type: line; margin: 25" position="-1 1.5 -10">
+          <a-image src="#card-thumb" height="4" width="4"
+              event-set__1="_event: mousedown; scale: 1 1 1"
+              event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+              event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+              event-set__4="_event: mouseleave; scale: 1 1 1"
+              back="on: click; target: #image-360; src: moon.html"
+              ></a-image>
+        </a-entity>
+
+
       <a-obj-model src="moontrek05/model.obj" mtl="moontrek05/terrain.mtl" scale="0.1 0.1 0.3" position="-5 -0 5" rotation="-90 0 0"></a-obj-model>   
-      <a-obj-model src="models/astronaut/Z2.obj" mtl="models/astronaut/Z2.mtl" scale="1 1 1" position="-1 -0.6 -8" rotation="0 20 0"></a-obj-model>
+      <a-obj-model src="models/astronaut/Z2.obj" mtl="models/astronaut/Z2.mtl" scale="1 1 1" position="-1 -2.2 -8" rotation="0 20 0"></a-obj-model>
     </a-scene>
   </body>
 </html>

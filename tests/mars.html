@@ -7,7 +7,7 @@
     <script src="aframe-v0.8.2.min.js"></script>
     <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
-    <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
+    <!-- <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script> -->
     <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
     <script src="js/register.js"></script>
     <script src="models/mars/main.js"></script>
@@ -19,6 +19,8 @@
         <a-assets>
           <img id="marte1-thumb" crossorigin="anonymous" src="skymaps/marte1.png">
           <img id="marte2-thumb" crossorigin="anonymous" src="skymaps/marte2.png">
+          <img id="back-thumb" crossorigin="anonymous" src="skymaps/back.png">
+          <img id="on-thumb" crossorigin="anonymous" src="skymaps/on.png">
           <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
         </a-assets>
       <!-- FIN ASSETS  -->
@@ -48,12 +50,34 @@
               set-image="on: click; target: #image-360; src: mars02-GaleCrater.html"
               sound="on: click; src: #click-sound"></a-image>
         </a-entity>
+        <!-- Back Button -->
+        <a-entity layout="type: line; margin: 25" position="-7.5 9 -15">
+          <a-image class="link" src="#back-thumb" height="2" width="2"
+              event-set__1="_event: mousedown; scale: 1 1 1"
+              event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+              event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+              event-set__4="_event: mouseleave; scale: 1 1 1"
+              back="on: click; target: #image-360; src: index.html"
+              ></a-image>
+        </a-entity>
+        <!-- Sound Button -->
+        <!-- 
+        <a-entity layout="type: line; margin: 25" position="7.5 9 -15">
+          <a-image class="link" src="#on-thumb" height="2" width="2"
+              event-set__1="_event: mousedown; scale: 1 1 1"
+              event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+              event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+              event-set__4="_event: mouseleave; scale: 1 1 1"
+              back-sound="on: click; target: #image-360; src: mars02-GaleCrater.html"
+              ></a-image>
+        </a-entity>
+      -->
       <!-- FIN BOTONES -->
 
       <!-- LOGO -->
 
-        <a-entity layout="type: line; margin: 1.5" position="-0 2.2 -4">
-          <a-image src="skymaps/logo.png" width="2px" height="1px"></a-image>
+        <a-entity layout="type: line; margin: 1.5" position="-0 9 -15">
+          <a-image src="skymaps/logo.png" width="8px" height="4px"></a-image>
         </a-entity>
 
       <!-- FIN LOGO -->
