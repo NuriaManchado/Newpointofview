@@ -13,6 +13,14 @@
     <!-- <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script> -->
     <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
     <script src="js/register.js"></script>
+    <script type="text/javascript">
+      var model;
+
+      window.addEventListener('load', function() {
+          // console.log("window load");
+          document.querySelector('a-scene').enterVR();
+      });
+    </script>
 </head>
   <body>
     <a-scene background="color: #111111">

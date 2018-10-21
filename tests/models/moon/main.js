@@ -3,6 +3,7 @@ var model;
 window.addEventListener('load', function() {
     // console.log("window load");
     model = document.getElementsByTagName("a-obj-model")[0];
+
     console.log(model);
     requestAnimationFrame(redraw);
 });
