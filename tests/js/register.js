@@ -17,8 +17,8 @@ AFRAME.registerComponent('set-image', {
     var el = this.el;
 
     el.addEventListener(data.on, function () {
+      window.location.href = data.src;
       console.log("Ahora re-direcciona", data.src);
-      //window.location.href = "/luna.html";
     });
   },
 
