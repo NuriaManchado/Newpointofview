@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./js/aframe-0.8.2.min.js"></script>
+    <script src="./js/animrot.js"></script>
+
+<!--    
+    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+-->
+
+</head>
+<body>
+    <a-scene background="color: #444444">
+
+        <a-assets>
+            <img id="milkyway" src="./img/milkyway_dark_2048.jpg">
+            <img id="sun-tex" src="./img/sun.jpg">
+            <img id="earth-tex" src="./img/earth_cloudy.jpg">
+        </a-assets>
+
+        <a-entity rotation="0 0 0">
+            <a-sky src="#milkyway" rotation="90 -45 0"></a-sky>
+
+            <a-entity light="type:ambient; color: #111"></a-entity>
+            <a-entity light="type:point; intensity:1; distance:0; decay: 2" position="0 0 0"></a-entity>
+
+            <a-sphere    animrot="rotY:1" radius="30" position="0 0 0" rotation="0 0 0" material="shader:flat; src:#sun-tex"></a-sphere>
+
+            <a-entity position="0 0 0" animrot="rotY:2.5">
+                <a-entity position="0 0 -150">
+                    <a-entity position="0 0 40">
+                        <a-camera></a-camera>
+                    </a-entity>
+                    <a-entity animrot="rotY:-2.5">
+                        <a-entity rotation="30 0 0">
+                            <a-sphere animrot="rotY:30" radius="10" material="src:#earth-tex" position="0 0 0" rotation="0 180 0"></a-sphere>
+                        </a-entity>
+                    </a-entity>
+                </a-entity>
+            </a-entity>
+        </a-entity>
+
+    </a-scene>
+
+    <script>
+/*****************************************************************************/        
+/** BEGIN SCRIPT *************************************************************/        
+/*****************************************************************************/        
+function onWindowLoad() {
+}
+
+window.addEventListener('load', onWindowLoad);
+/*****************************************************************************/        
+/** END SCRIPT ***************************************************************/        
+/*****************************************************************************/        
+</script>
+</body>
+</html>

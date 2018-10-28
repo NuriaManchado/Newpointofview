@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./js/aframe-0.8.2.min.js"></script>
+    <script src="./js/animrot.js"></script>
+    <script src="./js/bodysystem.js"></script>
+    <script src="./js/trail.js"></script>
+
+<!--    
+    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+-->
+
+</head>
+<body>
+    <script>
+/*****************************************************************************/        
+/** BEGIN SCRIPT *************************************************************/        
+/*****************************************************************************/        
+
+/*****************************************************************************/        
+/** END SCRIPT ***************************************************************/        
+/*****************************************************************************/        
+    </script>
+
+
+    <a-scene background="color: #444444">
+
+        <a-assets>
+            <img id="milkyway" src="./img/milkyway_dark_2048.jpg">
+            <img id="sun-tex" src="./img/sun.jpg">
+            <img id="earth-tex" src="./img/earth_cloudy.jpg">
+            <img id="venus-tex" src="./img/venus.jpg">
+            <img id="mercury-tex" src="./img/mercury.jpg">
+        </a-assets>
+
+        <a-entity position="0 0 350">
+            <a-camera></a-camera>
+        </a-entity>
+
+        <a-entity rotation="90 0 0" bodysystem>
+            <a-sky src="#milkyway" rotation="90 -45 0"></a-sky>
+
+            <a-entity alight="type:ambient; color: #111"></a-entity>
+            <a-entity alight="type:point; intensity:1; distance:0; decay: 2" position="0 0 0"></a-entity>
+
+            <a-sphere body="fixed:true; mass:1000" radius="30" material="shader:flat; src:#sun-tex"></a-sphere>
+
+            <a-entity orbitrail="target:mercury; color:#CCC"></a-entity>
+            <a-entity orbitrail="target:venus; color:#FCA"></a-entity>
+            <a-entity orbitrail="target:earth; color:#ACF"></a-entity>
+
+            <a-sphere id="mercury" animrot="rotY:360" body="mass:0.1; vel:0 0 -100; acc:0 0 10" radius="4" position="100 0 0" material="src:#mercury-tex"></a-sphere>
+            <a-sphere id="venus" animrot="rotY:360" body="mass:1; vel:0 0 74; acc:0 0 10" radius="9" position="-180 0 0" material="src:#venus-tex"></a-sphere>
+            <a-entity id="earth" body="mass:10; vel:0 0 -62; acc:0 0 10" position="260 0 0">
+                <a-sphere animrot="rotY:360" radius="10" material="src:#earth-tex"></a-sphere>
+            </a-entity>
+
+            <a-entity position="0 0 0" animrot="rotY:20">
+                <a-entity position="150 0 0" animrot="rotY:-20">
+                    <a-entity rotation="30 0 0">
+                    </a-entity>
+                </a-entity>
+            </a-entity>
+
+        </a-entity>
+
+    </a-scene>
+
+    <script>
+/*****************************************************************************/        
+/** BEGIN SCRIPT *************************************************************/        
+/*****************************************************************************/        
+function onWindowLoad() {
+
+}
+
+window.addEventListener('load', onWindowLoad);
+/*****************************************************************************/        
+/** END SCRIPT ***************************************************************/        
+/*****************************************************************************/        
+    </script>
+</body>
+</html>
